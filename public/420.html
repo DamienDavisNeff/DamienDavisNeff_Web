@@ -17,37 +17,50 @@
     <link rel="shortcut icon" href="https://www.sirspiro.com/error_favicon.png" onerror="this.href='error_favicon.png'" type="image/png">
     <style>
         * { transition-duration: 250ms; }
-        html { 
-            font-family: sans-serif;
-            text-transform: capitalize;
-            background-color: rgb(100,0,0);
-            overflow:hidden;
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        .parent-vertical {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .parent-horizontal {
+            display: flex;
+            align-items: center;
         }
         a {
-            color: black;
             text-decoration: none;
-            transition-duration: 1ms !important;
-        } a:hover { 
-            color: rgb(20, 20, 20);
-            transition-duration: 1ms !important;
+            color: #ff0000;
         }
-        .parent-horizontal { text-align: center; }
-        .error-code, .error-text, .seperator {
-            display: inline-block;
-            font-weight: bold;
-            font-size: 4vw;
+        .error-code {
+            font-size: 35px;
+            margin-right: 5px;
         }
-        .low-opacity { opacity:0.6; }
+        .error-text {
+            font-size: 25px;
+            margin-left: 5px;
+        }
         .error-image {
-            vertical-align: middle;
-            width:35%;
-        } .error-image:hover { width:40%; }
-        .seperator { opacity: 0; }
-        @media screen and (orientation:portrait) {
-            .parent-vertical { margin-top: 30%; }
+            border-radius:1vw;
+            width:20vw;
+            height: auto;
+            margin: 20px;
         }
-        @media screen and (orientation:landscape) {
-            .parent-vertical { margin-top: -3%; }
+        .error-image:hover {
+            transform:rotateX(-22deg);
+            filter: brightness(1.2);
+        }
+        .low-opacity {
+            opacity: 0.6;
+        }
+        .seperator {
+            opacity: 0;
         }
     </style>
 </head>
@@ -59,15 +72,13 @@
                 <p class="error-code">420.</p>
             </a>
             <p class="seperator">.</p>
-            <p class="error-text low-opacity">Riding the clouds</p>
+            <p class="error-text low-opacity">Riding The Clouds</p>
 	    </div>
-        <div class="parent-horizontal">
-            <a href="https://www.sirspiro.com">
-                <img src="https://www.sirspiro.com/error_red.png" onerror="this.src='error_red.png'" alt="Broken version of SirSpiro logo. A red 'S' where each layer is falling" class="error-image">
-            </a>
+        <div class="parent-horizontal scene">
+            <img src="error-egg2.jpg" class="error-image">
         </div>
         <div class="parent-horizontal">
-            <p class="error-text">The server is hanging out with Snoop Dogg</p>
+            <p class="error-text">Snoop Dogg's here too.</p>
         </div>
     </div>
     
