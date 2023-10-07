@@ -23,7 +23,6 @@
             background-color: rgb(100,0,0);
             overflow:hidden;
         }
-        #error { text-transform: none;}
         a {
             color: black;
             text-decoration: none;
@@ -57,10 +56,10 @@
     <div class="parent-vertical">
         <div class="parent-horizontal">
             <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes" target="_blank">
-                <p class="error-code">404.</p>
+                <p class="error-code">420.</p>
             </a>
             <p class="seperator">.</p>
-            <p class="error-text low-opacity">Not Found</p>
+            <p class="error-text low-opacity">Riding the clouds</p>
 	    </div>
         <div class="parent-horizontal">
             <a href="https://www.sirspiro.com">
@@ -68,14 +67,9 @@
             </a>
         </div>
         <div class="parent-horizontal">
-            <p class="error-text override-capatalize" id="error">Cannot Get Page</p>
+            <p class="error-text">The server is hanging out with Snoop Dogg</p>
         </div>
     </div>
     
-    <script>
-        const url = location.pathname;
-        document.getElementById("error").innerHTML = `Cannot Get Page "${url}"`;
-    </script>
-
 </body>
 </html>
