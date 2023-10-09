@@ -1,29 +1,46 @@
 var canvas = document.getElementById("background");
 var ctx = canvas.getContext("2d");
+
 const defaultBackground = "red";
+var screenSize = [
+    window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+    window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+];
 
 window.onload = function() {
-    SetCanvasSize(
-        ctx,
+    screenSize = [
         window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
         window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
-    );
-    FillCanvas(ctx,defaultBackground);
+    ];
+    SetDefault();
 }
 window.addEventListener("resize", function() {
-    SetCanvasSize(
-        ctx,
+    screenSize = [
         window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
         window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
-    );
-    FillCanvas(ctx,defaultBackground);
+    ];
+    SetDefault();
 });
 
+
+async function SetDefault() {
+    SetCanvasSize(
+        canvas,
+        screenSize
+    );
+    FillCanvas(canvas,defaultBackground);
+}
+
+//
+
+const targetFPS = 1;
+// Draw Loop
 setInterval(() => {
-    const rgb = [
-        255,
-        0,
-        0
-    ]
-    // FillCanvas(ctx,`rgb(${rgb[0]},${rgb[1]},${rgb[2]})`);
-}, 1000);
+    FillCanvas(canvas,defaultBackground);
+    // not working yet RenderSVG(ctx,RenderSVG("temp/logo.svg"),[0,0]);
+},1000/targetFPS);
+/*
+setInterval(() => {
+    FillCanvas(canvas,`#${CalculateRandom(100000,999999)}`);
+}, 1000/targetFPS);
+*/

@@ -1,4 +1,4 @@
-async function SetCanvasSize(ctx,size) {
+async function SetCanvasSize(canvas,size) {
     canvas.width = size[0];
     canvas.height = size[1];
     //
@@ -12,24 +12,34 @@ async function SetCanvasSize(ctx,size) {
         [
             canvas.width,
             canvas.height
-        ]
+        ] 
     );
 }
-async function FillCanvas(ctx,color) {
+async function FillCanvas(canvas,color) {
+    const ctx = canvas.getContext('2d');
     console.log(`Canvas Color: ${color}`);
     ctx.fillStyle = color;
     ctx.fillRect(0,0,canvas.width,canvas.height);
 }
 
-async function DrawCircle(ctx,radius,pos,color,stroke) {
-    ctx.beginPath();
-    ctx.arc(pos[0],pos[1],radius,0,2*Math.PI);
-    ctx.fillStyle = color;
-    ctx.fill();
-    ctx.strokeStyle = stroke["color"];
-    ctx.lineWidth = stroke["width"];
-    ctx.stroke();
+//
+// Somewhat Advanced Functions
+async function RenderSVG(ctx,svg,position) {
+    // const ctx = canvas.getContext('2d');
+    const DOMURL = window.url || window.webkitURL || window;
+    const img = new Image();
+    const svgBlob = new Blob([svg], {
+        type:"image/svg+xml;charset=utf-8"
+    });
+    const url = DOMURL.createObjectURL(svgBlob);
+
+    img.onload = function() {
+        ctx.drawImage(img,position[0],position[1]);
+        DOMURL.revokeObjectURL(url);
+    };
+    img.src = url;
 }
+//
 
 async function ConvertToScreen(canvas,canvasCoordinates) {
     const canvasBounds = canvas.getBoundingClientRect();
