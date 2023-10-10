@@ -98,7 +98,11 @@
       <br><a target="_blank" href="https://github.com/DamienDavisNeff/YouTubeStudioFavicon/issues/new">Request A Feature</a>
       <br><a target="_blank" href="mailto://damien@davisneff.com">Contact Me</a>
     </div>
-    <script src="scripts/fade-content.js" defer></script>
-    <script src="scripts/dropdown-selection.js" defer></script>
+    <script>
+    if(window.location.href.includes("127.0.0.1"))
+    console.warn("IN DEV MODE, THIS DOES NOT WORK UNLESS YOU HOST DIRECTLY THROUGH PUBLIC DIRECTORY")
+    </script>
+    <script src="/support/scripts/fade-content.js" defer></script>
+    <script src="/support/scripts/dropdown-selection.js" defer></script>
   </body>
 </html>
