@@ -1,5 +1,5 @@
 window.addEventListener('load', function() {
-    FadeContent(document.querySelector("#mainContent"))
+    FadeContent(document.querySelector("#content"))
   });
 
 async function FadeContent(element) {
