@@ -1,0 +1,101 @@
+:root {
+    --background-main: #000000;
+    --background-secondary: #1b1b1b;
+    --background-tertiary: #181818;
+    --default-text: #ffffff;
+    --padding-amount: 20px;
+    --margin-amount: 40px;
+    --border-radius: 8px;
+}
+.debug {
+    border: 3px solid red;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: var(--background-main);
+    color: var(--default-text);
+    scroll-behavior: smooth;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+hr {
+    opacity: 0.15;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+h1 .emoji {
+    height: 1.5rem !important;
+}
+.subheader {
+    height: 1.5rem;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 0;
+    height: 1.5rem;
+} h2 .emoji {
+    height: 1.3rem;
+}
+
+.main-contents {
+    margin: 35px;
+    flex: 1;
+}
+
+.align {
+    display: inline-block !important;
+}
+
+a {
+    color: var(--default-text);
+    text-decoration: none;
+    transition-duration: 250ms;
+} a:hover {
+    opacity: 0.75;
+}
+
+.push-down {
+    margin-top: 60px !important;
+}
+.push-top {
+    margin-bottom: 60px !important;
+}
+
+@media screen and (orientation: portrait) {
+    [type="desktop"] {
+        display: none;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    [type="mobile"] {
+        display: none;
+    }
+}

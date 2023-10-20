@@ -5,44 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Damien Davis-Neff | Home</title>
     <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/105996288?v=5" type="image/x-icon">
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
-    <style media="screen">
-      body { background: #070707; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { 
-        background: rgb(29, 29, 29); 
-        max-width: 360px; 
-        margin: 100px auto 16px; 
-        padding: 32px 24px; 
-        border-radius: 3px; 
-        opacity: 0;
-        transition: opacity 0.75s ease-in-out;
-      }
-      #message h2 { color: #ff0000; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(255, 255, 255, 0.6); margin: 0 0 16px;}
-      #message p { color: white; line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { 
-        display: block; 
-        text-align: center; 
-        background: #8d0000; 
-        text-transform: uppercase; 
-        text-decoration: none; 
-        color: white; 
-        padding: 16px; 
-        border-radius: 4px;
-        transition-duration: 500ms;
-      }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #message a:hover {
-        opacity:80%;
-        transition-duration: 500ms;
-      }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: rgb(0, 0, 0); box-shadow: none; }
-        body { border-top: 16px solid #ff0000; }
-      }
-    </style>
+    <link rel="stylesheet" href="style/announcement.css">
+    <link rel="stylesheet" href="style/root.css">
+    <link rel="stylesheet" href="style/temp_index.css">
+
+    <script src="scripts/global.js"></script>
+    <script src="scripts/announce.js" defer></script>
     <script defer>
       window.addEventListener('load', function() {
         const element = document.getElementById('message');
@@ -54,6 +23,15 @@
     </script>
   </head>
   <body>
+    <div id="announcement-holder" style="display:none">
+      <div class="announcement-parent">
+          <p id="announce-title" style="display:none"></p>
+          <p id="announce-content" style="display:none"></p>
+          <p id="announce-author" style="display:none"></p>
+          <p id="announce-date" style="display:none"></p>
+      </div>
+  </div>
+  <div id="content">
     <div id="message">
       <h2>Welcome</h2>
       <h1>Damien Davis-Neff's New Website</h1>
@@ -61,5 +39,7 @@
       <a target="_blank" href="https://www.sirspiro.com/">OPEN SIRSPIRO.COM</a>
       <br><a target="_blank" href="support/index.html">SUPPORT & CONTACT</a>
     </div>
+  </div>
+    
   </body>
 </html>
