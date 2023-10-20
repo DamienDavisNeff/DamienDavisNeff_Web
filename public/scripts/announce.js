@@ -7,8 +7,19 @@ async function GetAlert(url) {
         // checks to see if its been less than 2 hours
         if(currentTime - parsedData.timestamp < 2 * 60 * 60 * 1000)  {// 2 hours converted into ms ||| 2hours * 60 minutes * 60 seconds * 1000 ms
             // if it has, dont bother rechecking announcement
-            UpdateAnnouncmentInfo(parsedData.data);
-            return;
+            // but first check if it has a certain element that tells the script
+            // the announcement should go on the bottom and does some shenaganigs
+            // to do that
+            // very unoptimized
+            // i dont know what i was doing in the past 
+            // writing most of this script for my other website
+            // but hopefully this does the trick
+            // update: yes it works
+            if(document.getElementById("debugger-push-up")) {
+                document.getElementById("announcement-holder").setAttribute("style","bottom:0% !important;top:auto;");
+                return UpdateAnnouncmentInfo(parsedData.data,"up");
+            }
+            return UpdateAnnouncmentInfo(parsedData.data,"down");
         }
         console.warn("Cached announcement is too old");
     }
@@ -24,12 +35,13 @@ async function GetAlert(url) {
 
 
 
-async function UpdateAnnouncmentInfo(data) {
+async function UpdateAnnouncmentInfo(data,direction) {
     // checks to ensure data is valid & the data should be displayed
     if(data != null && data.isDisplayed && new Date(data.expiresAt) > new Date()) { 
         // and makes announcement visible, and pushes down the rest of the page
         document.querySelector("#announcement-holder").style.display = "";
-        document.querySelector("#content").classList.add("push-down");
+        if(!direction) direction = "down";
+        document.querySelector("#content").classList.add(`push-${direction}`);
     } else return console.warn("Announcement data not provided, or is hidden"); // If the announcment is to be shown, unhide it
     // If each announcement element is to be shown, unhide them
     if(data.contents.title.isDisplayed) document.querySelector("#announce-title").style.display = "";
