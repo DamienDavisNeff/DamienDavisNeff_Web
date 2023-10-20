@@ -6,31 +6,24 @@
     <title>Damien Davis-Neff | Home</title>
     <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/105996288?v=5" type="image/x-icon">
 
-    <style media="screen">
-    </style>
-
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden; /* Hide scrollbars */
-        }
-        canvas#background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1; /* Place canvas behind other content */
-        }
-    </style>
-
-    <script src="scripts/default.js"></script>
+    <link rel="stylesheet" href="style/announcement.css">
+    <link rel="stylesheet" href="style/root.css">
+    <link rel="stylesheet" href="style/index.css">
 
   </head>
   <body>
 
-    <canvas id="background"></canvas>
+    <div id="announcement-holder" style="display:none">
+      <div class="announcement-parent">
+          <p id="announce-title" style="display:none"></p>
+          <p id="announce-content" style="display:none"></p>
+          <p id="announce-author" style="display:none"></p>
+          <p id="announce-date" style="display:none"></p>
+      </div>
+    </div>
+    <div id="content">
 
-    <script src="scripts/canvas.js" defer></script>
-    <script src="scripts/background_canvas.js" defer></script>
+    </div>
 
   </body>
 </html>
