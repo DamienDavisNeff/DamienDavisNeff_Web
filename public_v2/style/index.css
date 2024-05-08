@@ -40,6 +40,18 @@ body {
     aspect-ratio: 4 / 1.5;
 }
 
+.portfolio-item a .secondary-header {
+    opacity: 0%;
+} .portfolio-item:hover a .secondary-header {
+    opacity: 100%;
+}
+.portfolio-item a .main-header {
+    opacity: 100%;
+}
+.portfolio-item:hover a .main-header {
+    opacity: 0%;
+}
+
 .background-img {
     position: relative;
     height: 100%; /* Occupy full height */
@@ -57,7 +69,7 @@ body {
     background: radial-gradient(circle, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)); /* Vignette effect */
 }
 
-.background-img h2 {
+.background-img h2, .background-img h3 {
     position: absolute;
     top: 50%;
     left: 50%;
