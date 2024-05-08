@@ -1,11 +1,19 @@
 :root {
-    --background-main: #000000;
-    --background-secondary: #1b1b1b;
-    --background-tertiary: #181818;
-    --default-text: #ffffff;
-    --padding-amount: 20px;
-    --margin-amount: 40px;
-    --border-radius: 8px;
+
+    --font-family: Arial, sans-serif;
+    --base-padding: 20px;
+    --transition-duration: 0.3s;
+    --grid-gap: 20px;
+    --main-aspect-ratio: 4 / 1;
+    --secondary-aspect-ratio: 4 / 1.5;
+    --vignette-color-start: rgba(0, 0, 0, 0.1);
+    --vignette-color-end: rgba(0, 0, 0, 0.3);
+    --footer-bg-color: #333;
+    --footer-text-color: #fff;
+    --footer-padding: 10px;
+    --text-color: white;
+    --text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
+
 }
 .debug {
     border: 3px solid red;
@@ -17,13 +25,6 @@
 
 ::-webkit-scrollbar {
     display: none;
-}
-
-.push-down {
-    margin-top: 60px !important;
-}
-.push-top {
-    margin-bottom: 60px !important;
 }
 
 @media screen and (orientation: portrait) {

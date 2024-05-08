@@ -1,94 +1,84 @@
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    font-family: var(--font-family);
 }
 
 .main, .secondary {
-    padding: 20px;
+    padding: var(--base-padding);
 }
 
+
+/* Align links in grids */
 .portfolio-grid {
     display: grid;
-    gap: 20px; /* Space between grid items */
+    gap: var(--grid-gap); /* Space between grid items */
 }
-
-/* mobile */
-@media (orientation: portrait) {
+/* changes grid based on device orientation, typically desktop/mobile */
+/* mobile */ @media (orientation: portrait) {
     .portfolio-grid {
-        grid-template-columns: repeat(1, 1fr); /* Two-column grid layout */
+        grid-template-columns: repeat(1, 1fr); /* Single-column grid layout */
     }
-}
-/* desktop */
-@media (orientation: landscape) {
+} /* desktop */ @media (orientation: landscape) {
     .portfolio-grid {
         grid-template-columns: repeat(2, 1fr); /* Two-column grid layout */
     }
 }
 
-
 .portfolio-item {
     position: relative;
     overflow: hidden;
-    aspect-ratio: 4 / 1;
-    transition: transform 0.3s; /* Transition for hover effect */
-}
-.portfolio-item.main {
-    aspect-ratio: 4 / 1;
-}
-.portfolio-item.secondary {
-    aspect-ratio: 4 / 1.5;
+    aspect-ratio: var(--main-aspect-ratio);
+    transition: transform var(--transition-duration); /* Transition for hover effect */
 }
 
+/* aspect ratio of link previews */
+.portfolio-item.main {
+    aspect-ratio: var(--main-aspect-ratio);
+} .portfolio-item.secondary {
+    aspect-ratio: var(--secondary-aspect-ratio);
+}
+
+/* link header hover effects for dual text */
 .portfolio-item a .secondary-header {
-    opacity: 0%;
-} .portfolio-item:hover a .secondary-header {
+    opacity: 0;
+}.portfolio-item:hover a .secondary-header {
     opacity: 100%;
 }
 .portfolio-item a .main-header {
     opacity: 100%;
+} .portfolio-item:hover a .main-header {
+    opacity: 0;
 }
-.portfolio-item:hover a .main-header {
-    opacity: 0%;
+.portfolio-item:hover .background-img {
+    transform: scale(1.05); /* Hover effect to slightly enlarge */
 }
 
+/* preview image to link divs */
 .background-img {
     position: relative;
     height: 100%; /* Occupy full height */
     background-size: cover;
     background-position: center;
-}
-
-.background-img::before {
+} .background-img::before { /* applies vignette before inner contents */
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)); /* Vignette effect */
+    background: radial-gradient(circle, var(--vignette-color-start), var(--vignette-color-end)); /* Vignette effect */
 }
 
+/* centers header content */
 .background-img h2, .background-img h3 {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -100%);
-    color: white;
+    color: var(--text-color);
     z-index: 1;
     font-size: 24px;
     text-align: center;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 1); /* Add a subtle shadow */
-}
-
-
-.portfolio-item:hover .background-img {
-    transform: scale(1.05); /* Hover effect to slightly enlarge */
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
+    text-shadow: var(--text-shadow);
 }
