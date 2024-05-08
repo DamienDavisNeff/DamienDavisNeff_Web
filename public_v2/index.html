@@ -6,6 +6,31 @@
     <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/105996288?v=5" type="image/x-icon">
     <link rel="stylesheet" href="style/root.css">
     <link rel="stylesheet" href="style/index.css">
+    <!-- <script defer>
+        // Dynamic Favicion Loading
+        const faviconUrl = "https://cors.api.sirspiroszn.com/?url=https://avatars.githubusercontent.com/u/105996288";
+        var faviconCanvas = document.createElement("canvas");
+        // canvas.style.display = "none";
+        var faviconCtx = faviconCanvas.getContext("2d");
+
+        var image = new Image();
+        image.src = faviconUrl;
+
+        image.onload = () => {
+            var center = [faviconCanvas.width / 2, faviconCanvas.height / 2]
+            var radius = Math.min(faviconCanvas.width,faviconCanvas.height) / 2;
+            faviconCtx.beginPath();
+            faviconCtx.arc(center[0],center[1], radius, 0, 2 * Math.PI);
+            faviconCtx.clip();
+            faviconCtx.drawImage(image, 0, 0, faviconCanvas.width, faviconCanvas.height);
+
+            faviconData = faviconCanvas.toDataURL("image/x-icon");
+            var favicon = document.querySelector(`link[rel*=*"icon"]`) || document.createElement("link");
+            favicon.rel = "icon";
+            favicon.href = faviconData;
+            if(!document.querySelector(`link[rel*=*"icon"]`)) document.head.appendChild(favicon);
+        };
+    </script> -->
 </head>
 <body>
 
