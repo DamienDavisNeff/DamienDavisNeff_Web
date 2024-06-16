@@ -23,6 +23,7 @@
 
 * {
     transition-duration: 250ms;
+    scroll-behavior: smooth !important;
 }
 
 body {
@@ -46,6 +47,7 @@ body {
         display: none !important;
     }
 }
+
 
 a {
     text-decoration: none;

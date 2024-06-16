@@ -23,3 +23,9 @@ function ReadSVGData(filepath) {
     if(xhr.status != 200) throw new Error(`Failed to load SVG file: ${filePath}`);
     return xhr.responseText;
 }
+
+function CheckOrientation() {
+    // true = landscape
+    // false = portrait
+    return window.screen.width > window.screen.height ? true : false;
+}
