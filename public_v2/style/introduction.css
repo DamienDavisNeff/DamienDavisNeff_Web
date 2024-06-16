@@ -60,7 +60,7 @@
 }
 
 /* Wave Animation */
-.wave .emoji {
+.wave .emoji, .backup {
     display: inline-block;
     width: 1em;
     height: 1em;

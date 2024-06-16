@@ -1,0 +1,17 @@
+.social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-icon {
+    width: 40px; /* Adjust the size as needed */
+    height: 40px;
+    display: inline-block;
+    margin: 5px;
+    filter: brightness(0) saturate(100%) invert(17%) sepia(3%) saturate(19%) hue-rotate(23deg) brightness(92%) contrast(87%);
+}
+.social-icon:hover {
+    filter: brightness(0) saturate(100%) invert(32%) sepia(22%) saturate(6%) hue-rotate(75deg) brightness(95%) contrast(92%);
+    transform: rotateZ(12deg);
+}
