@@ -5,7 +5,8 @@
     <title>Damien · Home</title>
     <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/105996288?v=5" type="image/x-icon">
     <link rel="stylesheet" href="style/root.css">
-    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/introduction.css">
+    <link rel="stylesheet" href="style/portfolio.css">
     <!-- <script defer>
         // Dynamic Favicion Loading
         const faviconUrl = "https://cors.api.sirspiroszn.com/?url=https://avatars.githubusercontent.com/u/105996288";
@@ -31,31 +32,44 @@
             if(!document.querySelector(`link[rel*=*"icon"]`)) document.head.appendChild(favicon);
         };
     </script> -->
+    <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-      <div class="main">
+    <div class="introduction-container">
+        <div class="introduction" id="introduction">
+            <div class="introduction-image">
+                <img src="images/Photos/Wall.JPEG"> <!-- later this will be selected randomly on each load -->
+            </div>
+            <div class="introduction-text">
+                <h2 class="introduction-header wave">Hello 👋</h2>
+                <p class="introduction-text">I'm Damien. I do graphic design and some other things too. </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="main" id="portfolio">
         <div class="portfolio-grid">
+            <div class="portfolio-item main">
+                <a href="thumbnails.html">
+                    <div class="background-img" style="background-image: url('images/preview/preview_thumbnail.jpg');">
+                        <h2 class="main-header">Thumbnails</h2>
+                        <h2 class="secondary-header">SirSpiro, TMoose, and more.</h2>
+                    </div>
+                </a>
+              </div>
+              <div class="portfolio-item main">
+                <a href="social-media-banners.html">
+                    <div class="background-img" style="background-image: url('images/preview/preview_banner.jpg');">
+                        <h2 class="main-header">Social Media Banners</h2>
+                        <h2 class="secondary-header">SirSpiro, TMoose, and more.</h2>
+                    </div>
+                </a>
+              </div>
             <div class="portfolio-item main">
               <a href="logos.html">
                   <div class="background-img" style="background-image: url('images/preview/preview_logo.jpg');">
                       <h2 class="main-header">Logos</h2>
-                      <h2 class="secondary-header">SirSpiro, TMoose, and more.</h2>
-                  </div>
-              </a>
-            </div>
-            <div class="portfolio-item main">
-              <a href="social-media-banners.html">
-                  <div class="background-img" style="background-image: url('images/preview/preview_banner.jpg');">
-                      <h2 class="main-header">Social Media Banners</h2>
-                      <h2 class="secondary-header">SirSpiro, TMoose, and more.</h2>
-                  </div>
-              </a>
-            </div>
-            <div class="portfolio-item main">
-              <a href="thumbnails.html">
-                  <div class="background-img" style="background-image: url('images/preview/preview_thumbnail.jpg');">
-                      <h2 class="main-header">Thumbnails</h2>
                       <h2 class="secondary-header">SirSpiro, TMoose, and more.</h2>
                   </div>
               </a>
@@ -69,26 +83,30 @@
                 </a>
             </div>
         </div>
-      </div>
+    </div>
 
-      <div class="secondary" hidden>
+    <div class="secondary" id="projects">
         <div class="portfolio-grid">
             <div class="portfolio-item secondary">
               <a href="tmoose.html">
-                  <div class="background-img" style="background-image: url('images/');">
-                      <h2 class="main-header">TMoose</h2>
+                  <div class="background-img" style="background-image: url('images/Banners/TMoose/Twitter.jpg');">
+                      <h2 class="main-header"></h2>
+                      <h2 class="secondary-header">A collection featuring all collaborations with TMoose</h2>
                   </div>
               </a>
             </div>
             <div class="portfolio-item secondary">
               <a href="spiro.html">
-                  <div class="background-img" style="background-image: url('images/spiro_banner.webp');">
-                      <h2 class="main-header">SirSpiro</h2>
+                  <div class="background-img" style="background-image: url('images/Banners/Spiro/Twitter.jpg');">
+                      <h2 class="main-header"></h2>
+                      <h2 class="secondary-header">A collection featuring all collaborations with SirSpiro</h2>
                   </div>
               </a>
             </div>
         </div>
-      </div>
+    </div>
+
+    <script defer>twemoji.parse(document.body)</script>
 
 </body>
 </html>

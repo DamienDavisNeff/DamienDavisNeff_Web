@@ -1,18 +1,21 @@
 :root {
 
     --font-family: Arial, sans-serif;
-    --base-padding: 20px;
+    --base-padding: 1vw;
+    --default-radius: 0.5vw;
+    --bigger-radius: 1vw;
     --transition-duration: 0.3s;
-    --grid-gap: 20px;
+    --grid-gap: 1vw;
     --main-aspect-ratio: 4 / 1;
     --secondary-aspect-ratio: 4 / 1.5;
     --vignette-color-start: rgba(0, 0, 0, 0.1);
     --vignette-color-end: rgba(0, 0, 0, 0.3);
     --footer-bg-color: #333;
     --footer-text-color: #fff;
-    --footer-padding: 10px;
+    --footer-padding: 0.5vw;
     --text-color: white;
-    --text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
+    --text-shadow: 1px 1px 5px rgb(0, 0, 0);
+    --text-shadow-inverse: 1px 1px 5px rgb(255, 255, 255);
 
 }
 .debug {
@@ -21,6 +24,19 @@
 
 * {
     transition-duration: 250ms;
+}
+
+body {
+    margin: var(--base-padding);
+    padding: var(--base-padding);
+    font-family: var(--font-family);
+    background-color: #000000; /* Dark background color */
+    color: #ffffff; /* White text color */
+}
+
+.emoji {
+    height: 1.5rem;
+    vertical-align:text-top;
 }
 
 ::-webkit-scrollbar {
@@ -37,4 +53,9 @@
     [type="mobile"] {
         display: none;
     }
+}
+
+a {
+    text-decoration: none; /* Remove underline from links */
+    color: var(--text-color); /* White link color */
 }
