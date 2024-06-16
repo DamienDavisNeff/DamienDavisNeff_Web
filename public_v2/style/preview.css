@@ -19,8 +19,12 @@
     border-radius: var(--bigger-radius);
 }
 
-#previewImageThumb:hover {
+#previewImageThumb:hover, #previewImageBanner:hover {
     transform: scale(1.05);
+}
+
+#preview {
+    padding: var(--base-padding)
 }
 
 .preview-text {
@@ -58,6 +62,7 @@
     border-radius: calc(var(--base-padding)*0.5);
 } .preview-images-item:hover {
     transform: scale(1.05);
+    cursor: zoom-in;
 }
 
 .preview button {

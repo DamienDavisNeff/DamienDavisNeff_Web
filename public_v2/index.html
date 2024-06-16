@@ -40,10 +40,14 @@
         window.onload = () => {
             if(!CheckOrientation()) return;
             setTimeout(() => {
+                /*
                 window.scroll({
                     top: 200,
                     behavior: "smooth",
                 });
+                */
+                if(navigator.userActivation.hasBeenActive) return;
+                document.getElementById("preview").scrollIntoView("smooth");
             }, 3000);
         }
     </script>
@@ -58,7 +62,9 @@
             <div class="introduction-text">
                 <h2 class="introduction-header wave">Hello 👋</h2>
                 <p class="introduction-text" type="desktop">I'm Damien. I do graphic design and some other things too. </p>
+                <button>Support</button>
             </div>
+            
         </div>
     </div>
 
@@ -70,16 +76,32 @@
             <h2 class="preview-header">Thumbnails for Your Channel</h2>
             <p class="preview-text">Elevate your Click-Through-Rate by standing out in the digital landscape with eye-catching visuals tailored to your needs.</p>
             <div class="preview-images" type="desktop">
-                <img src="/images/Thumbnails/Chapter 1/Did It Again.jpg" class="preview-images-item preview-images-item-picker" style="opacity: 0;">
-                <img src="/images/Thumbnails/Chapter 1/Did It Again.jpg" class="preview-images-item preview-images-item-picker" style="opacity: 0;">
-                <img src="/images/Thumbnails/Chapter 1/Did It Again.jpg" class="preview-images-item preview-images-item-picker" style="opacity: 0;">
-                <img src="/images/Thumbnails/Chapter 1/Did It Again.jpg" class="preview-images-item preview-images-item-picker" style="opacity: 0;">
+                <img src="/images/Thumbnails/Chapter 1/Did It Again.jpg" class="preview-images-item preview-images-item-picker" style="opacity: 0;" onclick="OnImageClick(document.getElementById('previewImageThumb'),this)">
+                <img src="/images/Thumbnails/Chapter 1/Did It Again.jpg" class="preview-images-item preview-images-item-picker" style="opacity: 0;" onclick="OnImageClick(document.getElementById('previewImageThumb'),this)">
+                <img src="/images/Thumbnails/Chapter 1/Did It Again.jpg" class="preview-images-item preview-images-item-picker" style="opacity: 0;" onclick="OnImageClick(document.getElementById('previewImageThumb'),this)">
+                <img src="/images/Thumbnails/Chapter 1/Did It Again.jpg" class="preview-images-item preview-images-item-picker" style="opacity: 0;" onclick="OnImageClick(document.getElementById('previewImageThumb'),this)">
             </div>
             <button>Order Now</button>
         </div>
     </div>
 
-    <div class="main" id="portfolio">
+    <div class="preview" id="preview2">
+        <div class="preview-text">
+            <h2 class="preview-header">Banners for Your Social Media</h2>
+            <p class="preview-text">Boost your brand identiy with minimal social media banners designed to outshine other's in today's landscape.</p>
+            <div class="preview-images" type="desktop">
+                <img src="/images/Banners/Spiro/Twitter.jpg" class="preview-images-item preview-images-item-picker-banner" style="opacity: 0;" onclick="OnImageClick(document.getElementById('previewImageBanner'),this)">
+                <img src="/images/Banners/Spiro/Twitter.jpg" class="preview-images-item preview-images-item-picker-banner" style="opacity: 0;" onclick="OnImageClick(document.getElementById('previewImageBanner'),this)">
+                <img src="/images/Banners/Spiro/Twitter.jpg" class="preview-images-item preview-images-item-picker-banner" style="opacity: 0;" onclick="OnImageClick(document.getElementById('previewImageBanner'),this)">
+            </div>
+            <button>Order Now</button>
+        </div>
+        <div class="preview-image">
+            <img src="/images/Banners/Spiro/Twitter.jpg" id="previewImageBanner" style="opacity: 0;" class="preview-images-item-picker-banner">
+        </div>
+    </div>
+
+    <div class="main" id="portfolio" hidden>
         <div class="portfolio-grid">
             <div class="portfolio-item main">
                 <a href="thumbnails.html">
@@ -116,7 +138,7 @@
         </div>
     </div>
 
-    <div class="secondary" id="projects">
+    <div class="secondary" id="projects" hidden>
         <div class="portfolio-grid">
             <div class="portfolio-item secondary">
                 <a href="tmoose.html">

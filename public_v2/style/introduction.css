@@ -94,3 +94,17 @@
     60% { transform: rotate(0deg); }
     100% { transform: rotate(0deg); }
 }
+
+.introduction-text button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: var(--default-radius);
+    cursor: pointer;
+    transition: background-color var(--transition-duration);
+} .introduction-text button:hover {
+    background-color: #555;
+}
