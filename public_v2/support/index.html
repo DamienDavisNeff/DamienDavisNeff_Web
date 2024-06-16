@@ -6,15 +6,11 @@
     <title>Damien Davis-Neff | Support</title>
     <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/105996288?v=5" type="image/x-icon">
 
-    <link rel="stylesheet" href="..\support\style\select.css">
-    <link rel="stylesheet" href="..\support\style\main.css">
-    <link rel="stylesheet" href="..\style/announcement.css">
-    <link rel="stylesheet" href="..\style/root.css">
+    <link rel="stylesheet" href="/support/style/select.css">
+    <link rel="stylesheet" href="/support/style/main.css">
+    <link rel="stylesheet" href="/style/root.css">
 
-
-    <script src="./scripts/global.js"></script>
-    <script src="./scripts/announce.js" defer></script>
-    <announcement id="debugger-push-up"></announcement>
+    <script src="/scripts/global.js"></script>
   </head>
   <body>
     <div id="content">
@@ -46,20 +42,7 @@
         <br><a target="_blank" href="mailto://damien@davisneff.com">Contact Me</a>
       </div>
     </div>
-
-    <div id="announcement-holder" style="display:none">
-      <div class="announcement-parent">
-          <p id="announce-title" style="display:none"></p>
-          <p id="announce-content" style="display:none"></p>
-          <p id="announce-author" style="display:none"></p>
-          <p id="announce-date" style="display:none"></p>
-      </div>
-    </div>
     
-    <script>
-    if(window.location.href.includes("127.0.0.1"))
-    console.warn("IN DEV MODE, THIS DOES NOT WORK UNLESS YOU HOST DIRECTLY THROUGH PUBLIC DIRECTORY")
-    </script>
     <script src="/support/scripts/fade-content.js" defer></script>
     <script src="/support/scripts/dropdown-selection.js" defer></script>
   </body>
