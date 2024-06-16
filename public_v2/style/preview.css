@@ -11,6 +11,7 @@
     height: auto; /* Adjusted for maintaining aspect ratio */
     position: relative;
     overflow: hidden;
+    border-radius: var(--bigger-radius);
 }
 
 .preview-image img {
@@ -28,7 +29,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    width: 50%;
+    width: 75%;
 }
 
 .preview-header {
@@ -53,6 +54,10 @@
     width: 20%; /* Adjust width of each image item */
     height: auto;
     margin: 5px; /* Adjust margin between items */
+    border-radius: calc(var(--base-padding)*0.5);
+}
+.preview-images-item:hover {
+    transform: scale(1.05);
 }
 
 .preview button {
@@ -69,4 +74,8 @@
 
 .preview button:hover {
     background-color: #555; /* Darker background color on hover */
+}
+
+#previewImageThumb:hover {
+    transform: scale(1.05);
 }
