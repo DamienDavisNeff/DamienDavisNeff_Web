@@ -1,5 +1,4 @@
 :root {
-
     --font-family: Arial, sans-serif;
     --base-padding: 1vw;
     --default-radius: 0.5vw;
@@ -30,13 +29,8 @@ body {
     margin: var(--base-padding);
     padding: var(--base-padding);
     font-family: var(--font-family);
-    background-color: #000000; /* Dark background color */
-    color: #ffffff; /* White text color */
-}
-
-.emoji {
-    height: 1.5rem;
-    vertical-align:text-top;
+    background-color: #000000;
+    color: #ffffff;
 }
 
 ::-webkit-scrollbar {
@@ -47,15 +41,17 @@ body {
     [type="desktop"] {
         display: none !important;
     }
-}
-
-@media screen and (orientation: landscape) {
+} @media screen and (orientation: landscape) {
     [type="mobile"] {
         display: none !important;
     }
 }
 
 a {
-    text-decoration: none; /* Remove underline from links */
-    color: var(--text-color); /* White link color */
+    text-decoration: none;
+    color: var(--text-color); 
+}
+.emoji {
+    height: 1.5rem;
+    vertical-align:text-top;
 }
