@@ -59,9 +59,3 @@ a {
     text-decoration: none; /* Remove underline from links */
     color: var(--text-color); /* White link color */
 }
-
-.footer {
-    text-align: center;
-    margin-top: var(--base-padding);
-    margin-bottom: calc(var(--base-padding)*-1);
-}
