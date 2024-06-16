@@ -1,11 +1,5 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: var(--font-family);
-}
-
 .main, .secondary {
-    padding: var(--base-padding);
+    border-radius: var(--default-radius);;
 }
 
 
@@ -31,11 +25,17 @@ body {
     aspect-ratio: var(--main-aspect-ratio);
     transition: transform var(--transition-duration); /* Transition for hover effect */
 }
+#portfolio {
+    margin-top: calc(var(--base-padding)*2);
+    margin-bottom: calc(var(--base-padding)*2);
+}
 
 /* aspect ratio of link previews */
 .portfolio-item.main {
     aspect-ratio: var(--main-aspect-ratio);
+    white-space: nowrap;
 } .portfolio-item.secondary {
+    white-space: nowrap;
     aspect-ratio: var(--secondary-aspect-ratio);
 }
 
@@ -60,6 +60,7 @@ body {
     height: 100%; /* Occupy full height */
     background-size: cover;
     background-position: center;
+    text-align: center;
 } .background-img::before { /* applies vignette before inner contents */
     content: "";
     position: absolute;
@@ -78,7 +79,7 @@ body {
     transform: translate(-50%, -100%);
     color: var(--text-color);
     z-index: 1;
-    font-size: 24px;
+    font-size: 1.5rem;
     text-align: center;
     text-shadow: var(--text-shadow);
 }
