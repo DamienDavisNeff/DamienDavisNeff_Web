@@ -1,21 +1,26 @@
+/*
+Shoutout to Mr. ChatGPT for helping out
+with some of the css, especially with grid
+since I never used grids before
+*/
+
 .main, .secondary {
-    border-radius: var(--default-radius);;
+    border-radius: var(--default-radius);
+    white-space: nowrap;
 }
 
-
-/* Align links in grids */
 .portfolio-grid {
     display: grid;
-    gap: var(--grid-gap); /* Space between grid items */
+    gap: var(--grid-gap);
 }
-/* changes grid based on device orientation, typically desktop/mobile */
-/* mobile */ @media (orientation: portrait) {
+
+/* Primarily mobile */ @media (orientation: portrait) {
     .portfolio-grid {
-        grid-template-columns: repeat(1, 1fr); /* Single-column grid layout */
+        grid-template-columns: repeat(1, 1fr); /* mobile has single column */
     }
-} /* desktop */ @media (orientation: landscape) {
+} /*Primarily desktop */ @media (orientation: landscape) {
     .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr); /* Two-column grid layout */
+        grid-template-columns: repeat(2, 1fr); /* desktop has two column */
     }
 }
 
@@ -23,45 +28,27 @@
     position: relative;
     overflow: hidden;
     aspect-ratio: var(--main-aspect-ratio);
-    transition: transform var(--transition-duration); /* Transition for hover effect */
-}
-#portfolio {
-    margin-top: calc(var(--base-padding)*2);
-    margin-bottom: calc(var(--base-padding)*2);
-}
-
-/* aspect ratio of link previews */
-.portfolio-item.main {
-    aspect-ratio: var(--main-aspect-ratio);
-    white-space: nowrap;
+    transition: transform var(--transition-duration);
 } .portfolio-item.secondary {
-    white-space: nowrap;
     aspect-ratio: var(--secondary-aspect-ratio);
 }
 
-/* link header hover effects for dual text */
-.portfolio-item a .secondary-header {
-    opacity: 0;
-}.portfolio-item:hover a .secondary-header {
-    opacity: 100%;
-}
-.portfolio-item a .main-header {
-    opacity: 100%;
-} .portfolio-item:hover a .main-header {
-    opacity: 0;
-}
-.portfolio-item:hover .background-img {
-    transform: scale(1.05); /* Hover effect to slightly enlarge */
+#portfolio {
+    margin-top: calc(var(--base-padding) * 2);
+    margin-bottom: calc(var(--base-padding) * 2);
 }
 
-/* preview image to link divs */
+.portfolio-item:hover .background-img {
+    transform: scale(1.05);
+}
+
 .background-img {
     position: relative;
-    height: 100%; /* Occupy full height */
+    height: 100%;
     background-size: cover;
     background-position: center;
     text-align: center;
-} .background-img::before { /* applies vignette before inner contents */
+} .background-img::before {
     content: "";
     position: absolute;
     top: 0;
@@ -71,7 +58,6 @@
     background: radial-gradient(circle, var(--vignette-color-start), var(--vignette-color-end)); /* Vignette effect */
 }
 
-/* centers header content */
 .background-img h2, .background-img h3 {
     position: absolute;
     top: 50%;
@@ -82,4 +68,16 @@
     font-size: 1.5rem;
     text-align: center;
     text-shadow: var(--text-shadow);
+}
+
+.portfolio-item a .main-header {
+    opacity: 100%;
+} .portfolio-item:hover a .main-header {
+    opacity: 0;
+}
+
+.portfolio-item a .secondary-header {
+    opacity: 0;
+} .portfolio-item:hover a .secondary-header {
+    opacity: 100%;
 }
