@@ -45,13 +45,13 @@ body {
 
 @media screen and (orientation: portrait) {
     [type="desktop"] {
-        display: none;
+        display: none !important;
     }
 }
 
 @media screen and (orientation: landscape) {
     [type="mobile"] {
-        display: none;
+        display: none !important;
     }
 }
 

@@ -1,0 +1,72 @@
+.preview {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Align items at the start of the flex container */
+    text-align: center;
+    margin-bottom: calc(var(--base-padding) * 2);
+}
+
+.preview-image {
+    width: 50%; /* Adjust as needed */
+    height: auto; /* Adjusted for maintaining aspect ratio */
+    position: relative;
+    overflow: hidden;
+}
+
+.preview-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Ensure the entire image is visible */
+    border-radius: var(--bigger-radius);
+}
+
+.preview-text {
+    flex: 1; /* Take remaining space */
+    font-size: 1.5rem; /* Larger font size */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 50%;
+}
+
+.preview-header {
+    margin: 0; /* Remove default margin */
+    padding-bottom: 10px; /* Adjusted padding */
+}
+
+.preview-text p {
+    margin: 0; /* Remove default margin from paragraph */
+    font-size: 1.2rem; /* Slightly smaller font size */
+}
+
+.preview-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px; /* Adjust as needed */
+}
+
+.preview-images-item {
+    width: 20%; /* Adjust width of each image item */
+    height: auto;
+    margin: 5px; /* Adjust margin between items */
+}
+
+.preview button {
+    margin-top: 20px; /* Increased margin */
+    padding: 12px 24px; /* Increased padding */
+    font-size: 1.2rem; /* Slightly larger font size */
+    background-color: #333; /* Dark background color */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: var(--default-radius);
+    cursor: pointer;
+    transition: background-color var(--transition-duration);
+}
+
+.preview button:hover {
+    background-color: #555; /* Darker background color on hover */
+}
