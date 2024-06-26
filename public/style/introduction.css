@@ -17,21 +17,6 @@
     text-align: center;
 }
 
-@media (orientation: portrait) {
-    .introduction-container {
-        height: 25vh;
-    }
-    .introduction {
-        flex-direction: column;
-    }
-    .introduction-image {
-        height: 300px !important;
-    }
-    .introduction-header {
-        margin-top: 20px !important;
-    }
-}
-
 /* Introduction Image */
 .introduction-image {
     width: 250px;
