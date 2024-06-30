@@ -9,7 +9,7 @@ const thumbnailImages = [
     "/images/Thumbnails/Chapter 1/Ransom.jpg",
     "/images/Thumbnails/Chapter 1/Did It Again.jpg",
     "/images/Thumbnails/Chapter 1/Silence SMG.jpg",
-    "/images/Thumbnails/Chapter 2/Ransom Remix.jpg",
+    "/images/Thumbnails/Chapter 2/Righteous Alt.jpg",
     "/images/Thumbnails/Chapter 4/Chapter 4 Duos 1.jpg",
     "/images/Thumbnails/Chapter 4/Chapter 4 FNCS 2.jpg",
     "/images/Thumbnails/Grand Theft Auto/Unstoppable.webp",
