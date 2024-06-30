@@ -25,7 +25,6 @@ PickRandomImage(introductionImages,[document.getElementById("introductionImage")
 PickRandomImage(thumbnailImages,document.getElementsByClassName("preview-images-item-picker"));
 PickRandomImage(bannerImages,document.getElementsByClassName("preview-images-item-picker-banner"));
 
-
 function _PickRandomImage(images,source) {
     // OLD VERSION OF FUNCTION; ONLY WORKS WITH ONE SOURCE
     const randomValues = [
@@ -47,8 +46,14 @@ function _PickRandomImage(images,source) {
 function PickRandomImage(images, sources) {
     
     var _images = images;
+    var _sources = [];
 
     for(let a = 0; a < sources.length; a++) {
+        if(Array.from(sources[a].classList).includes("skip-random")) continue;
+        _sources.push(sources[a]);
+    }
+
+    for(let a = 0; a < _sources.length; a++) {
 
         const randomValues = [
             0,
@@ -61,7 +66,7 @@ function PickRandomImage(images, sources) {
         var loadedImage = new Image();
         loadedImage.src = chosenImage;
         loadedImage.onload = () => {
-            var randomImage = sources[a];
+            var randomImage = _sources[a];
             randomImage.src = chosenImage;
             randomImage.style.opacity = 1;
         }
@@ -73,6 +78,13 @@ function PickRandomImage(images, sources) {
         _images = __images;
 
     }
+
+}
+
+function DuplicateImage(source,final) {
+    const newSource = source.src;
+    final.src = newSource;
+    final.style.opacity = 1;
 }
 
 function OnImageClick(previewSlot,previewClicked) {
