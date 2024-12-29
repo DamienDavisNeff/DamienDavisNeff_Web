@@ -1,9 +1,9 @@
 const introductionImages = [
-    "/images/Photos/Forehead Smack.JPEG", 
-    "/images/Photos/July 4th 1.JPEG",
-    "/images/Photos/July 4th 2.JPEG",
-    "/images/Photos/Walk.JPEG",
-    "/images/Photos/Wall.JPEG"
+    "/images/Photos/Forehead Smack.jpg", 
+    "/images/Photos/July 4th 1.jpg",
+    "/images/Photos/July 4th 2.jpg",
+    "/images/Photos/Walk.jpg",
+    "/images/Photos/Wall.jpg"
 ];
 const thumbnailImages = [
     "/images/Thumbnails/Chapter 1/Ransom.jpg",

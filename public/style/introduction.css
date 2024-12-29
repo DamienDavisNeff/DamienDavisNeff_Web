@@ -100,7 +100,8 @@
         margin: var(--base-padding);
     }
     .introduction-image {
-        width: 45vw;
+        width: 36vw;
+        max-height: 25vh;
         height: 36vw;
     }
     .introduction-text {
